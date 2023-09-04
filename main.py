@@ -5,8 +5,8 @@ button = Pin(0, Pin.IN, Pin.PULL_UP)
 relay = Pin(1, Pin.OUT)
 led = Pin(2, Pin.OUT)
 
-time_running = 5
-time_waiting = 1
+time_running = 5 # 5*60
+time_waiting = 1 # 20*60
 
 timer_on = Timer()
 timer_off = Timer()
@@ -39,6 +39,6 @@ def toggle_relay(pin):
 
     time.sleep(0.1)
 
-button.irq(toggle_relay)
+button.irq(toggle_relay, Pin.IRQ_FALLING | Pin.IRQ_RISING)
 
 toggle_relay(button)
