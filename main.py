@@ -1,7 +1,7 @@
 from machine import Pin, Timer
 import time
 
-button = Pin(0, Pin.IN, Pin.PULL_UP)
+switch = Pin(0, Pin.IN, Pin.PULL_UP)
 relay = Pin(1, Pin.OUT)
 led = Pin(2, Pin.OUT)
 
@@ -39,6 +39,6 @@ def toggle_relay(pin):
 
     time.sleep(0.1)
 
-button.irq(toggle_relay, Pin.IRQ_FALLING | Pin.IRQ_RISING)
+switch.irq(toggle_relay, Pin.IRQ_FALLING | Pin.IRQ_RISING)
 
-toggle_relay(button)
+toggle_relay(switch)
