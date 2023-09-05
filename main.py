@@ -3,7 +3,6 @@ import time
 
 switch = Pin(0, Pin.IN, Pin.PULL_UP)
 relay = Pin(1, Pin.OUT)
-led = Pin(2, Pin.OUT)
 
 time_running = 5 # 5*60
 time_waiting = 1 # 20*60
@@ -12,11 +11,9 @@ timer_on = Timer()
 timer_off = Timer()
 
 def on():
-    led.on()
     relay.on()
     
 def off():
-    led.off()
     relay.off()
 
 def relay_timer_on(t):
