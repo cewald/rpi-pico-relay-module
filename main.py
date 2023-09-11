@@ -4,8 +4,8 @@ import time
 switch = Pin(0, Pin.IN, Pin.PULL_UP)
 relay = Pin(1, Pin.OUT)
 
-time_running = 5 # 5*60
-time_waiting = 1 # 20*60
+time_running = 5*60
+time_waiting = 20*60
 
 timer_on = Timer()
 timer_off = Timer()
